@@ -11,6 +11,9 @@ var service = {
             args: ['--no-sandbox', '--disable-setuid-sandbox']
         });
         const page = await browser.newPage();
+        if (device && devices[device]) {
+            await page.emulate(devices[device]);
+        }
         await page.goto(url);
 
         var file_path = __dirname + `/screenshot-${(new Date()).getTime()}-full.png`;
@@ -25,17 +28,13 @@ var service = {
 
     },
     devices: async() => {
-        // console.log(devices);
         var device_map = [];
         for (var key in devices) {
-            console.log(key, isNaN(key));
             if (isNaN(key)) {
                 device_map.push(key);
             }
         }
-        console.log(device_map);
         return device_map;
     }
 }
-
 module.exports = service;
