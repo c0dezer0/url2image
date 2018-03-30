@@ -4,7 +4,7 @@ var app = express();
 var PuppeteerService = require('./services').PuppeteerService;
 
 app.get('/', (req, res)=>{
-	res.send("Go to <b>/screenshot?url=https://www.google.com");
+	res.send("Go to /screenshot?url=https://www.google.com");
 })
 app.get('/screenshot', async (req, res)=>{
 	var url = req.query.url;
