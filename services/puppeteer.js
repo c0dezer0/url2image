@@ -24,7 +24,15 @@ var service = {
     },
     devices: async()=>{
         // console.log(devices);
-        return JSON.stringify(devices);
+        var device_map = [];
+        for(var key in devices){
+            console.log(key, isNaN(key));
+            if(isNaN(key)){
+                device_map.push(key);
+            }
+        }
+        console.log(device_map);
+        return device_map;
     }
 }
 

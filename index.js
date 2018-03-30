@@ -3,6 +3,9 @@ var express = require('express');
 var app = express();
 var PuppeteerService = require('./services').PuppeteerService;
 
+app.get('/', (req, res)=>{
+	res.send("Go to <b>/screenshot?url=https://www.google.com");
+})
 app.get('/screenshot', async (req, res)=>{
 	var url = req.query.url;
 	if(!url || !url.length){
@@ -14,7 +17,6 @@ app.get('/screenshot', async (req, res)=>{
 	fs.unlink(screenshot, ()=>{});
 })
 app.get('/devices', async(req, res)=>{
-	// console.log(PuppeteerService.devices());
-	res.send(PuppeteerService.devices());
+	res.send(JSON.stringify(PuppeteerService.devices()));
 })
 app.listen(process.env.PORT || 9000);
