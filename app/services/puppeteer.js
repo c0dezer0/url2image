@@ -1,6 +1,6 @@
-var puppeteer = require('puppeteer');
-var fs = require('fs');
-const devices = require('puppeteer/DeviceDescriptors');
+var puppeteer   = require('puppeteer');
+var fs          = require('fs');
+const devices   = require('puppeteer/DeviceDescriptors');
 
 var service = {
     screenshot: async(url = null, fullPage = true, device = null) => {
@@ -16,7 +16,7 @@ var service = {
         }
         await page.goto(url);
 
-        var file_path = __dirname + `/screenshot-${(new Date()).getTime()}-full.png`;
+        var file_path = _dir.TEMP + `/screenshot-${(new Date()).getTime()}_${Math.floor(Math.random()*10000)}-full.png`;
 
         await page.screenshot({
             path: file_path,

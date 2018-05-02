@@ -1,5 +1,5 @@
 {
-  "name": "url2png",
+  "name": "url2pix",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.3",
+    "html-minifier": "^3.5.14",
     "puppeteer": "^1.2.0"
   }
 }
