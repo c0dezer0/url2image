@@ -1,5 +1,7 @@
-var PuppeteerService = require('./puppeteer');
+var PuppeteerService 	= require('./puppeteer');
+var ImageService 		= require('./image_service');
 
 module.exports = {
-	PuppeteerService: PuppeteerService
+	PuppeteerService: PuppeteerService,
+	ImageService 	: ImageService
 }

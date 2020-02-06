@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title><%=title%></title>
+	<style type="text/css">
+		body {
+			margin: 0;
+		}
+		.top {
+			width: 100%;
+			float: left;
+			margin: 0;
+			padding: 0;
+		}
+		.top img {
+			float: left;
+		}
+		.main {
+			width: 100%;
+			height: auto;
+			margin: 0;
+			padding: 0;
+			float: left;
+		}
+		.title {
+			font-weight: normal;
+		    color: #fff;
+		    font-size: 120%;
+		    letter-spacing: 1px;
+		    bottom: 0;
+		    left: 0;
+		    vertical-align: baseline;
+		    background-color: #000;
+		    overflow: hidden;
+		    width: 100%;
+		    padding: 2px 2%;
+		}
+		.content {
+			width: 80%;
+		    font-size: 1rem;
+		    color: #000;
+		    float: left;
+		    background: #fff;
+		    padding: 2px 2%;
+		    margin: auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">
+		<div class="top">
+			<img src="<%=base64_image%>" width="100%">
+		</div>
+		<div class="title"><%=title%></div>
+		<div class="content"><%=content%></div>
+	</div>
+</body>
+</html>

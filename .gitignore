@@ -1,2 +1,8 @@
-/node_modules/*
+.DS_Store
+*/.DS_Store*
+node_modules
+build
 */node_modules/*
+/app/temp/*
+*.ignores.*
+*.DS_Store*
