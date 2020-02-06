@@ -32,12 +32,18 @@ var service = {
         
 
         var file_path = _dir.TEMP + `/screenshot-${(new Date()).getTime()}_${Math.floor(Math.random()*10000)}-full.png`;
-
-        await page.screenshot({
-            path: file_path,
-            fullPage
-        });
-        await browser.close();
+        try {
+            await page.screenshot({
+                path: file_path,
+                fullPage
+            });
+            await browser.close();
+        }
+        catch(e){
+            console.error(e);
+            return null;
+        }
+            
 
         return file_path;
 
