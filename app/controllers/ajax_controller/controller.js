@@ -12,6 +12,10 @@ var controller = {
         }
         var device 		= req.query.device;
         var screenshot 	= await PuppeteerService.screenshot(url, true, device);
+        if(!screenshot) {
+            res.send({error:true, message: "Error creating screenshot"});
+            return;
+        }
         fs.createReadStream(screenshot).pipe(res);
         fs.unlink(screenshot, () => {});
 	},
